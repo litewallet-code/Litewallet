@@ -61,14 +61,6 @@ Full guide library at **[litewallet.dev/guides](https://litewallet.dev/guides)**
 
 ---
 
-## Community
-
-- **Website:** [litewallet.dev](https://litewallet.dev)
-- **Twitter:** [@LiteWallet](https://x.com/LiteWallet)
-- **Discord:** [Join the Litecoin community](https://discord.gg/litecoin)
-
----
-
 ## Contributing to docs
 
 Found a typo or outdated information in these docs? Open an issue or submit a pull request.
