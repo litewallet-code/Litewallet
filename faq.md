@@ -42,7 +42,7 @@ Yes. LiteWallet supports Ledger and Trezor hardware wallets. When paired, your p
 
 MWEB (MimbleWimble Extension Block) is Litecoin's optional privacy layer. Transactions inside MWEB have confidential amounts and unlinked addresses. It activated on Litecoin in May 2022.
 
-Read more: [What is MWEB?](./guides/what-is-mweb.md)
+Read more: [What is MWEB?](./what-is-mweb.md)
 
 ### Do MWEB transactions cost more than standard Litecoin transactions?
 
@@ -93,3 +93,4 @@ See [security disclosure process](./security.md).
 - **Full FAQ:** [litewallet.dev/faq](https://litewallet.dev/faq)
 - **Guides:** [litewallet.dev/guides](https://litewallet.dev/guides)
 - **Download:** [litewallet.dev/download](https://litewallet.dev/download)
+- **Back to README:** [README.md](./README.md)

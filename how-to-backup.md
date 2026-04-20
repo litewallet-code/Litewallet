@@ -89,6 +89,7 @@ If you no longer have the recovery phrase AND you still have access to the origi
 ## Read more
 
 - **Full guide with screenshots:** [litewallet.dev/guides/how-to-backup](https://litewallet.dev/guides/how-to-backup)
-- **Security model:** [litewallet.dev/security](https://litewallet.dev/security)
+- **Security model:** [security.md](./security.md)
 - **Recovering a wallet:** [litewallet.dev/recover](https://litewallet.dev/recover)
-- **FAQ:** [litewallet.dev/faq](https://litewallet.dev/faq)
+- **FAQ:** [faq.md](./faq.md)
+- **Back to README:** [README.md](./README.md)

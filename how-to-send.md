@@ -106,4 +106,6 @@ If confirmations are slow (over 30 minutes), network congestion may be unusually
 - **Full send guide:** [litewallet.dev/guides/how-to-send](https://litewallet.dev/guides/how-to-send)
 - **How to receive:** [litewallet.dev/guides/how-to-receive](https://litewallet.dev/guides/how-to-receive)
 - **How to use MWEB:** [litewallet.dev/guides/how-to-use-mweb](https://litewallet.dev/guides/how-to-use-mweb)
-- **Security:** [litewallet.dev/security](https://litewallet.dev/security)
+- **What is MWEB?** [what-is-mweb.md](./what-is-mweb.md)
+- **Security:** [security.md](./security.md)
+- **Back to README:** [README.md](./README.md)

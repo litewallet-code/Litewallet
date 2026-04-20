@@ -62,3 +62,4 @@ For desktop installers, verify the download checksum against the values publishe
 - **Latest release notes:** [litewallet.dev/news/v3-16-0-release](https://litewallet.dev/news/v3-16-0-release)
 - **Download:** [litewallet.dev/download](https://litewallet.dev/download)
 - **Security:** [security.md](./security.md)
+- **Back to README:** [README.md](./README.md)

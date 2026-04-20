@@ -28,23 +28,21 @@ Get LiteWallet for your platform at **[litewallet.dev/download](https://litewall
 
 ## Documentation
 
-Guides and references in this repository:
-
 ### Guides
 
-- [What is MWEB?](./docs/guides/what-is-mweb.md) — Litecoin's privacy extension explained
-- [What is Litecoin?](./docs/guides/what-is-litecoin.md) — Beginner's guide to LTC
-- [Litecoin vs Bitcoin](./docs/guides/litecoin-vs-bitcoin.md) — Comparison of the two chains
-- [How to back up your wallet](./docs/guides/how-to-backup.md) — Seed phrase security
-- [How to send Litecoin](./docs/guides/how-to-send.md) — Step-by-step send guide
+- [What is MWEB?](./what-is-mweb.md) — Litecoin's privacy extension explained
+- [What is Litecoin?](./what-is-litecoin.md) — Beginner's guide to LTC
+- [Litecoin vs Bitcoin](./litecoin-vs-bitcoin.md) — Comparison of the two chains
+- [How to back up your wallet](./how-to-backup.md) — Seed phrase security
+- [How to send Litecoin](./how-to-send.md) — Step-by-step send guide
 
 Full guide library at **[litewallet.dev/guides](https://litewallet.dev/guides)**.
 
 ### Reference
 
-- [FAQ](./docs/faq.md) — Common questions
-- [Security](./docs/security.md) — Security model and practices
-- [Changelog](./docs/changelog.md) — Release history
+- [FAQ](./faq.md) — Common questions
+- [Security](./security.md) — Security model and practices
+- [Changelog](./changelog.md) — Release history
 
 ---
 
@@ -78,7 +76,7 @@ Found a typo or outdated information in these docs? Open an issue or submit a pu
 For questions about the wallet itself (bugs, feature requests, security reports), please use the main support channels:
 
 - **Support:** [litewallet.dev/support/troubleshoot](https://litewallet.dev/support/troubleshoot)
-- **Security:** See [SECURITY.md](./docs/security.md) for responsible disclosure
+- **Security:** See [security.md](./security.md) for responsible disclosure
 
 ---
 

@@ -72,7 +72,9 @@ For self-custody on every platform with MWEB privacy included, download **[LiteW
 ## Read more
 
 - **Full guide:** [litewallet.dev/guides/what-is-litecoin](https://litewallet.dev/guides/what-is-litecoin)
-- **Litecoin vs Bitcoin:** [litewallet.dev/guides/litecoin-vs-bitcoin](https://litewallet.dev/guides/litecoin-vs-bitcoin)
+- **Litecoin vs Bitcoin:** [litecoin-vs-bitcoin.md](./litecoin-vs-bitcoin.md)
+- **What is MWEB?** [what-is-mweb.md](./what-is-mweb.md)
 - **Halvings:** [litewallet.dev/guides/halving](https://litewallet.dev/guides/halving)
 - **Scrypt algorithm:** [litewallet.dev/guides/scrypt](https://litewallet.dev/guides/scrypt)
 - **Current price:** [litewallet.dev/price](https://litewallet.dev/price)
+- **Back to README:** [README.md](./README.md)

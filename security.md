@@ -37,7 +37,7 @@ LiteWallet is a light client. It downloads block headers and verifies transactio
 LiteWallet can route its network connections through Tor, hiding your IP address from the nodes it connects to. Enable in **Settings → Advanced → Tor**.
 
 ### MWEB for on-chain privacy
-For confidential transaction amounts and unlinked addresses, use MWEB. See [What is MWEB?](./guides/what-is-mweb.md).
+For confidential transaction amounts and unlinked addresses, use MWEB. See [What is MWEB?](./what-is-mweb.md).
 
 ## Open source
 
@@ -51,7 +51,7 @@ LiteWallet's source code is available on GitHub under the MIT License. This mean
 
 Self-custody puts you in charge, which means these things matter:
 
-1. **Back up your recovery phrase** — see [How to back up](./guides/how-to-backup.md)
+1. **Back up your recovery phrase** — see [How to back up](./how-to-backup.md)
 2. **Protect the recovery phrase** — never digitally, never shared, never in the cloud
 3. **Keep your device secure** — enable device-level encryption, use a strong PIN or password
 4. **Verify addresses before sending** — copy-paste malware exists
@@ -100,6 +100,7 @@ LiteWallet's code is open source and can be audited by anyone. Community review 
 ## Read more
 
 - **Full security page:** [litewallet.dev/security](https://litewallet.dev/security)
-- **How to back up:** [guides/how-to-backup.md](./guides/how-to-backup.md)
+- **How to back up:** [how-to-backup.md](./how-to-backup.md)
 - **Wallet recovery:** [litewallet.dev/recover](https://litewallet.dev/recover)
-- **FAQ:** [litewallet.dev/faq](https://litewallet.dev/faq)
+- **FAQ:** [faq.md](./faq.md)
+- **Back to README:** [README.md](./README.md)

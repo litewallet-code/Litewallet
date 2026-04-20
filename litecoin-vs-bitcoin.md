@@ -81,6 +81,7 @@ For most people, the answer is "both, for different purposes":
 ## Read more
 
 - **Full comparison:** [litewallet.dev/guides/litecoin-vs-bitcoin](https://litewallet.dev/guides/litecoin-vs-bitcoin)
-- **What is Litecoin?** [Read →](./what-is-litecoin.md)
-- **What is MWEB?** [Read →](./what-is-mweb.md)
+- **What is Litecoin?** [what-is-litecoin.md](./what-is-litecoin.md)
+- **What is MWEB?** [what-is-mweb.md](./what-is-mweb.md)
 - **Current price:** [litewallet.dev/price](https://litewallet.dev/price)
+- **Back to README:** [README.md](./README.md)

@@ -69,4 +69,5 @@ MWEB is a meaningful privacy upgrade — not perfect anonymity. For strong priva
 - **Full guide with examples:** [litewallet.dev/guides/mweb](https://litewallet.dev/guides/mweb)
 - **How to use MWEB:** [litewallet.dev/guides/how-to-use-mweb](https://litewallet.dev/guides/how-to-use-mweb)
 - **MWEB in LiteWallet:** [litewallet.dev/features/mweb](https://litewallet.dev/features/mweb)
-- **FAQ:** [litewallet.dev/faq](https://litewallet.dev/faq)
+- **FAQ:** [faq.md](./faq.md)
+- **Back to README:** [README.md](./README.md)
