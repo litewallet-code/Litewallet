@@ -1,78 +1,105 @@
-# What is Litecoin?
+# LiteWallet Security
 
-> 📖 This is a summary. Read the canonical version at [litewallet.dev/guides/what-is-litecoin](https://litewallet.dev/guides/what-is-litecoin)
+> 📖 Full security page at [litewallet.dev/security](https://litewallet.dev/security)
 
 ---
 
-Litecoin (LTC) is a peer-to-peer cryptocurrency launched in October 2011 by Charlie Lee. It was designed as a faster, lighter alternative to Bitcoin — hence the name.
+## Security model
 
-## The short version
+LiteWallet is designed around the principle that **you and only you** control your funds. This means:
 
-- **Launched:** October 13, 2011
-- **Founder:** Charlie Lee (former Google and Coinbase engineer)
-- **Hashing algorithm:** Scrypt (memory-hard, ASIC-resistant for longer than Bitcoin's SHA-256)
-- **Block time:** 2.5 minutes (vs Bitcoin's 10 minutes)
-- **Supply cap:** 84 million LTC (4× Bitcoin's 21 million)
-- **Halving schedule:** Every 840,000 blocks (~4 years)
-- **Confirmation speed:** Typically 2-3 minutes for a single confirmation
+- Private keys are generated on your device
+- Keys never leave your device
+- No server, account, or third party can recover your wallet
+- No one can freeze, reverse, or block your transactions
 
-## Design goals
+This model provides strong guarantees — no intermediary can steal from you or be compelled to give up your funds — but it also puts full responsibility for security on you.
 
-Litecoin was created to solve real problems with Bitcoin in its early years:
+## How keys are protected
 
-- **Faster confirmations** — 2.5-minute blocks mean merchants get payment certainty sooner
-- **Lower fees** — less blockchain congestion keeps per-transaction costs low
-- **Different mining algorithm** — Scrypt was designed to resist the ASIC centralization happening with Bitcoin
-- **Higher total supply** — 84M cap matches the 4× block time difference
+### Generation
+Keys are generated using cryptographically secure random number generation on your device. The 12-word recovery phrase is derived using BIP-39 (the same standard used by most major wallets).
 
-These properties made Litecoin a practical choice for everyday payments, especially in the early years of crypto adoption.
+### Storage
+- **iOS / macOS** — Keys stored in the Secure Enclave when available, encrypted with device-level keys
+- **Android** — Keys stored in the Android Keystore, hardware-backed where available
+- **Windows / macOS / Linux desktop** — Keys stored encrypted in the local app data, protected by your wallet PIN/password
 
-## Key milestones
+### Transmission
+Private keys are **never transmitted** over the network. All transaction signing happens locally on your device. LiteWallet only sends the final signed transaction to the Litecoin network.
 
-- **2013** — First major exchange listing. Litecoin becomes the #2 cryptocurrency by market cap
-- **2017** — First major cryptocurrency to activate SegWit
-- **2019** — Litecoin undergoes its second halving (block reward drops from 25 to 12.5 LTC)
-- **2022** — MWEB activates, adding optional privacy via MimbleWimble
-- **2023** — Third halving (block reward drops from 12.5 to 6.25 LTC)
+## Network privacy
 
-## Litecoin vs Bitcoin
+### SPV + header validation
+LiteWallet is a light client. It downloads block headers and verifies transactions cryptographically without syncing the full Litecoin blockchain.
 
-The two chains share the same UTXO model and cryptographic foundations — Litecoin is a Bitcoin fork with modifications. The key differences:
+### Tor support
+LiteWallet can route its network connections through Tor, hiding your IP address from the nodes it connects to. Enable in **Settings → Advanced → Tor**.
 
-| | Litecoin | Bitcoin |
-|---|---|---|
-| **Block time** | 2.5 min | 10 min |
-| **Supply cap** | 84M | 21M |
-| **Hash algorithm** | Scrypt | SHA-256 |
-| **MWEB privacy** | Yes (since 2022) | No |
-| **Typical tx fee** | Under $0.01 | Variable, often $1+ |
-| **SegWit** | Yes (2017) | Yes (2017) |
-| **Taproot** | No | Yes (2021) |
+### MWEB for on-chain privacy
+For confidential transaction amounts and unlinked addresses, use MWEB. See [What is MWEB?](./guides/what-is-mweb.md).
 
-Read the full comparison: [Litecoin vs Bitcoin](./litecoin-vs-bitcoin.md)
+## Open source
 
-## How to hold Litecoin
+LiteWallet's source code is available on GitHub under the MIT License. This means:
 
-You can hold LTC in several ways:
+- Anyone can audit the code for vulnerabilities
+- Builds can be reproduced from source
+- The community can verify the wallet does what it claims
 
-- **Self-custody wallet** (recommended) — You control your keys. Examples: LiteWallet, Cake Wallet, Litecoin Core
-- **Hardware wallet** — Ledger or Trezor holds keys offline; pair with a compatible software wallet
-- **Exchange** — Custodial, fast to trade, but the exchange holds your keys. Not recommended for long-term holdings.
+## Your responsibilities
 
-For self-custody on every platform with MWEB privacy included, download **[LiteWallet](https://litewallet.dev/download)**.
+Self-custody puts you in charge, which means these things matter:
 
-## Buying and selling
+1. **Back up your recovery phrase** — see [How to back up](./guides/how-to-backup.md)
+2. **Protect the recovery phrase** — never digitally, never shared, never in the cloud
+3. **Keep your device secure** — enable device-level encryption, use a strong PIN or password
+4. **Verify addresses before sending** — copy-paste malware exists
+5. **Keep LiteWallet updated** — security fixes go out with new versions
+6. **Watch for phishing** — LiteWallet support will NEVER ask for your recovery phrase
 
-- **Buy LTC:** [litewallet.dev/buy-litecoin](https://litewallet.dev/buy-litecoin)
-- **Sell LTC:** [litewallet.dev/sell-litecoin](https://litewallet.dev/sell-litecoin)
-- **Exchange:** [litewallet.dev/exchange](https://litewallet.dev/exchange)
+## Threats and mitigations
+
+| Threat | Mitigation |
+|---|---|
+| **Lost device** | Restore from 12-word recovery phrase on any compatible device |
+| **Stolen device without PIN** | Device encryption + wallet PIN protects funds |
+| **Phishing site pretending to be LiteWallet** | Always download from litewallet.dev directly |
+| **Clipboard malware replacing addresses** | Verify full address before confirming send |
+| **Social engineering for recovery phrase** | Never share the phrase, regardless of who asks |
+| **Physical theft of paper backup** | Store in a secure location, consider metal backup for fire/water resistance |
+| **Supply chain attack on binaries** | Verify download checksums against [litewallet.dev/download](https://litewallet.dev/download) |
+
+## Reporting a security vulnerability
+
+Found a security issue in LiteWallet? Please report it responsibly:
+
+1. **Do not** publicly disclose the issue before we've had a chance to address it
+2. **Do** report details via the contact methods on [litewallet.dev](https://litewallet.dev)
+3. We aim to acknowledge reports within 48 hours
+4. Coordinated disclosure timelines typically range from 30–90 days depending on severity
+
+We credit security researchers who report vulnerabilities responsibly, unless they prefer to remain anonymous.
+
+## What LiteWallet cannot protect you from
+
+To be fully transparent about the limitations:
+
+- **Physical compromise of your unlocked device**
+- **Observing you type your PIN over your shoulder**
+- **Social engineering where you willingly share your recovery phrase**
+- **Exchanges or services where you deposit LTC** (LiteWallet's protection ends once you send funds to a custodial service)
+- **Smart contract or DeFi risks** if you bridge LTC to other chains
+
+## Auditing
+
+LiteWallet's code is open source and can be audited by anyone. Community review is ongoing. For the current status of any formal audit reports, see [litewallet.dev/security](https://litewallet.dev/security).
 
 ---
 
 ## Read more
 
-- **Full guide:** [litewallet.dev/guides/what-is-litecoin](https://litewallet.dev/guides/what-is-litecoin)
-- **Litecoin vs Bitcoin:** [litewallet.dev/guides/litecoin-vs-bitcoin](https://litewallet.dev/guides/litecoin-vs-bitcoin)
-- **Halvings:** [litewallet.dev/guides/halving](https://litewallet.dev/guides/halving)
-- **Scrypt algorithm:** [litewallet.dev/guides/scrypt](https://litewallet.dev/guides/scrypt)
-- **Current price:** [litewallet.dev/price](https://litewallet.dev/price)
+- **Full security page:** [litewallet.dev/security](https://litewallet.dev/security)
+- **How to back up:** [guides/how-to-backup.md](./guides/how-to-backup.md)
+- **Wallet recovery:** [litewallet.dev/recover](https://litewallet.dev/recover)
+- **FAQ:** [litewallet.dev/faq](https://litewallet.dev/faq)

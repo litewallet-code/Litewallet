@@ -1,109 +1,78 @@
-# How to send Litecoin from LiteWallet
+# What is Litecoin?
 
-> 📖 Full step-by-step guide with screenshots at [litewallet.dev/guides/how-to-send](https://litewallet.dev/guides/how-to-send)
+> 📖 This is a summary. Read the canonical version at [litewallet.dev/guides/what-is-litecoin](https://litewallet.dev/guides/what-is-litecoin)
 
 ---
 
-Sending Litecoin from LiteWallet takes under a minute once you understand the basic flow. This guide walks through a standard send and notes the important checks to do along the way.
+Litecoin (LTC) is a peer-to-peer cryptocurrency launched in October 2011 by Charlie Lee. It was designed as a faster, lighter alternative to Bitcoin — hence the name.
 
-## Before you start
+## The short version
 
-Have ready:
-- The recipient's **Litecoin address** (or MWEB address, if sending privately)
-- The **amount** you want to send
-- Enough LTC in your wallet to cover the amount **plus the network fee**
+- **Launched:** October 13, 2011
+- **Founder:** Charlie Lee (former Google and Coinbase engineer)
+- **Hashing algorithm:** Scrypt (memory-hard, ASIC-resistant for longer than Bitcoin's SHA-256)
+- **Block time:** 2.5 minutes (vs Bitcoin's 10 minutes)
+- **Supply cap:** 84 million LTC (4× Bitcoin's 21 million)
+- **Halving schedule:** Every 840,000 blocks (~4 years)
+- **Confirmation speed:** Typically 2-3 minutes for a single confirmation
 
-## Sending a standard Litecoin transaction
+## Design goals
 
-### Step 1: Open the Send screen
+Litecoin was created to solve real problems with Bitcoin in its early years:
 
-Tap **Send** (or press Send from the main wallet view).
+- **Faster confirmations** — 2.5-minute blocks mean merchants get payment certainty sooner
+- **Lower fees** — less blockchain congestion keeps per-transaction costs low
+- **Different mining algorithm** — Scrypt was designed to resist the ASIC centralization happening with Bitcoin
+- **Higher total supply** — 84M cap matches the 4× block time difference
 
-### Step 2: Enter the recipient address
+These properties made Litecoin a practical choice for everyday payments, especially in the early years of crypto adoption.
 
-You can:
-- **Paste** the address from your clipboard
-- **Scan a QR code** using your device camera
-- **Type** the address manually (not recommended — one wrong character sends to the wrong destination)
+## Key milestones
 
-Litecoin addresses start with `L`, `M`, or `ltc1` (for SegWit). MWEB addresses are longer and start with `ltcmweb`.
+- **2013** — First major exchange listing. Litecoin becomes the #2 cryptocurrency by market cap
+- **2017** — First major cryptocurrency to activate SegWit
+- **2019** — Litecoin undergoes its second halving (block reward drops from 25 to 12.5 LTC)
+- **2022** — MWEB activates, adding optional privacy via MimbleWimble
+- **2023** — Third halving (block reward drops from 12.5 to 6.25 LTC)
 
-**Always verify the address matches what the recipient gave you.** Copy-paste malware can silently replace addresses in your clipboard with an attacker's address.
+## Litecoin vs Bitcoin
 
-### Step 3: Enter the amount
+The two chains share the same UTXO model and cryptographic foundations — Litecoin is a Bitcoin fork with modifications. The key differences:
 
-Type the amount in LTC. LiteWallet shows:
-- The equivalent in your chosen fiat currency
-- The current network fee estimate
-- Your remaining balance after the transaction
+| | Litecoin | Bitcoin |
+|---|---|---|
+| **Block time** | 2.5 min | 10 min |
+| **Supply cap** | 84M | 21M |
+| **Hash algorithm** | Scrypt | SHA-256 |
+| **MWEB privacy** | Yes (since 2022) | No |
+| **Typical tx fee** | Under $0.01 | Variable, often $1+ |
+| **SegWit** | Yes (2017) | Yes (2017) |
+| **Taproot** | No | Yes (2021) |
 
-### Step 4: Review and confirm
+Read the full comparison: [Litecoin vs Bitcoin](./litecoin-vs-bitcoin.md)
 
-LiteWallet shows a confirmation screen with:
-- Recipient address (the full address, not truncated)
-- Amount in LTC
-- Network fee
-- Total deducted from your balance
+## How to hold Litecoin
 
-Read this screen carefully. **Transactions on Litecoin are irreversible.** Once broadcast, there is no "undo."
+You can hold LTC in several ways:
 
-### Step 5: Authorize
+- **Self-custody wallet** (recommended) — You control your keys. Examples: LiteWallet, Cake Wallet, Litecoin Core
+- **Hardware wallet** — Ledger or Trezor holds keys offline; pair with a compatible software wallet
+- **Exchange** — Custodial, fast to trade, but the exchange holds your keys. Not recommended for long-term holdings.
 
-Depending on your security settings:
-- **PIN** — Enter your wallet PIN
-- **Biometric** — Use Face ID, Touch ID, or fingerprint
-- **Hardware wallet** — Connect and confirm on the device
+For self-custody on every platform with MWEB privacy included, download **[LiteWallet](https://litewallet.dev/download)**.
 
-LiteWallet signs the transaction locally and broadcasts it to the Litecoin network.
+## Buying and selling
 
-### Step 6: Wait for confirmation
-
-The recipient sees the transaction as "unconfirmed" immediately. It typically takes 2–3 minutes for the first confirmation.
-
-- **0 confirmations** — Transaction broadcast, visible on block explorers
-- **1 confirmation** — Mined into a block, secure enough for most purposes
-- **6 confirmations** — ~15 minutes, recommended for large amounts or exchange deposits
-
-## Sending privately via MWEB
-
-To send a confidential transaction:
-
-1. Make sure you have a MWEB balance (peg-in first if you don't — see [How to use MWEB](https://litewallet.dev/guides/how-to-use-mweb))
-2. Tap **Send** and choose **MWEB** as the source
-3. Enter a MWEB address (starts with `ltcmweb`)
-4. The transaction amount and addresses will be confidential on-chain
-
-**Note:** The recipient must also be able to receive MWEB. Most exchanges accept only standard Litecoin addresses — for those, peg out to a standard address first.
-
-## Fees
-
-LiteWallet estimates fees automatically based on current network conditions. Typical Litecoin network fees are under $0.01 — drastically lower than Bitcoin.
-
-For most users, the default fee is correct. Advanced users can adjust the fee in **Settings → Advanced**.
-
-## Common issues
-
-**"Insufficient balance" but I have enough LTC**  
-The amount includes the fee. If your balance is exactly the send amount, there's nothing left for the fee. Reduce the send amount slightly or receive more LTC.
-
-**"Invalid address"**  
-Check that the full address was pasted correctly. Missing characters at the beginning or end will fail validation.
-
-**Transaction pending too long**  
-If confirmations are slow (over 30 minutes), network congestion may be unusually high. The transaction will eventually confirm. For stuck transactions, see [Troubleshooting](https://litewallet.dev/support/troubleshoot).
-
-## Safety tips
-
-- **Test with a small amount first** if sending to a new address
-- **Double-check the first and last 4 characters** of the address before confirming
-- **Never share your recovery phrase** — no one legitimate will ever ask for it
-- **Be wary of unexpected payment requests** — scam patterns include urgency, threats, or impersonation
+- **Buy LTC:** [litewallet.dev/buy-litecoin](https://litewallet.dev/buy-litecoin)
+- **Sell LTC:** [litewallet.dev/sell-litecoin](https://litewallet.dev/sell-litecoin)
+- **Exchange:** [litewallet.dev/exchange](https://litewallet.dev/exchange)
 
 ---
 
 ## Read more
 
-- **Full send guide:** [litewallet.dev/guides/how-to-send](https://litewallet.dev/guides/how-to-send)
-- **How to receive:** [litewallet.dev/guides/how-to-receive](https://litewallet.dev/guides/how-to-receive)
-- **How to use MWEB:** [litewallet.dev/guides/how-to-use-mweb](https://litewallet.dev/guides/how-to-use-mweb)
-- **Security:** [litewallet.dev/security](https://litewallet.dev/security)
+- **Full guide:** [litewallet.dev/guides/what-is-litecoin](https://litewallet.dev/guides/what-is-litecoin)
+- **Litecoin vs Bitcoin:** [litewallet.dev/guides/litecoin-vs-bitcoin](https://litewallet.dev/guides/litecoin-vs-bitcoin)
+- **Halvings:** [litewallet.dev/guides/halving](https://litewallet.dev/guides/halving)
+- **Scrypt algorithm:** [litewallet.dev/guides/scrypt](https://litewallet.dev/guides/scrypt)
+- **Current price:** [litewallet.dev/price](https://litewallet.dev/price)

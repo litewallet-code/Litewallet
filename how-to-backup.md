@@ -1,95 +1,94 @@
-# LiteWallet FAQ
+# How to back up your LiteWallet
 
-> 📖 Full FAQ with 20+ questions at [litewallet.dev/faq](https://litewallet.dev/faq)
+> 📖 Full step-by-step guide with screenshots at [litewallet.dev/guides/how-to-backup](https://litewallet.dev/guides/how-to-backup)
 
 ---
 
-## General
+**This is the single most important step in self-custody.** If you lose access to your device without a backup, the LTC in your wallet is permanently unrecoverable. LiteWallet is non-custodial — no one, including us, can restore your funds.
 
-### Is LiteWallet free?
+## What you're backing up
 
-Yes. LiteWallet is free to download and use on every platform. You only pay standard Litecoin network fees (typically under $0.01) when sending transactions. There are no subscription fees, no transaction fees charged by LiteWallet, and no accounts.
+When you create a LiteWallet wallet, the app generates a **12-word recovery phrase** (also called a seed phrase or mnemonic). This phrase is:
 
-### Is LiteWallet open source?
+- The master key to your wallet
+- Human-readable (English words from the BIP-39 standard)
+- The only thing needed to restore your wallet on any compatible device
+- **Never uploaded anywhere** — LiteWallet stores it only on your device
 
-Yes. The source code is available on GitHub under the MIT License.
+## The backup process
 
-### Is LiteWallet custodial?
+### Step 1: Open the recovery phrase view
 
-No. LiteWallet is **non-custodial**. Your private keys are stored locally on your device and never uploaded to any server. No one — including LiteWallet — can access your funds. This also means no one can recover your wallet for you if you lose your recovery phrase.
+On first setup, LiteWallet shows your 12-word phrase automatically. If you skipped it, you can view it later:
 
-### What platforms does LiteWallet support?
+- **Settings** → **Security** → **View Recovery Phrase**
+- Enter your device PIN to confirm
 
-All five major platforms: **Windows, macOS, Linux, iOS, and Android**. The wallet identity (keys, balance, transaction history) works identically across platforms — restore the same recovery phrase on any device to access the same wallet.
+### Step 2: Write it down on paper
 
-## Security
+Use pen and paper. Not a computer. Not a screenshot. Not a photo. Not a cloud note.
 
-### Where are my private keys stored?
+- Each word in order, numbered 1 to 12
+- Write clearly
+- Use a pen that won't fade (not pencil, not erasable ink)
+- Include a small label so you remember which wallet it belongs to
 
-Locally on your device, encrypted and protected by your device's security features (Face ID, Touch ID, Secure Enclave on iOS/macOS, Android Keystore). Keys are never transmitted over the network.
+### Step 3: Verify what you wrote
 
-### What is the 12-word recovery phrase?
+Read your written copy back while comparing to the app. Confirm every word matches exactly. One wrong letter can make the backup useless.
 
-It's a human-readable cryptographic seed that generates all your wallet's keys. Anyone with the phrase can fully restore your wallet on any compatible device. This is why you must store it securely and never share it.
+### Step 4: Store it safely
 
-### Does LiteWallet support hardware wallets?
+Choose a location that is:
 
-Yes. LiteWallet supports Ledger and Trezor hardware wallets. When paired, your private keys stay on the hardware device — LiteWallet acts as the interface, but signing happens on the secure hardware.
+- **Physically secure** — fireproof safe, safety deposit box, or equivalent
+- **Private** — where no guests, cleaners, or family can accidentally find it
+- **Known only to you** — and optionally one trusted person (spouse, lawyer) who can access it if something happens to you
+- **Not with your device** — defeats the purpose if both are destroyed together
 
-## MWEB
+### Step 5: Consider a second copy
 
-### What is MWEB?
+Many users keep two copies in two separate secure locations. A house fire or flood can destroy both your device AND your single paper backup. Redundancy helps.
 
-MWEB (MimbleWimble Extension Block) is Litecoin's optional privacy layer. Transactions inside MWEB have confidential amounts and unlinked addresses. It activated on Litecoin in May 2022.
+Metal backup products (engraved steel plates) offer protection against fire and water damage that paper doesn't. Consider one for significant holdings.
 
-Read more: [What is MWEB?](./guides/what-is-mweb.md)
+## What NOT to do
 
-### Do MWEB transactions cost more than standard Litecoin transactions?
+- **Don't type it into any website, email, or messaging app** — not even to yourself
+- **Don't take a photo** — phones get stolen, cloud backups get hacked
+- **Don't store it digitally in a "notes" app** — even encrypted ones
+- **Don't share it with anyone claiming to be "support"** — LiteWallet support will NEVER ask for your recovery phrase
+- **Don't split it into halves stored in different places** — the phrase has no meaningful protection when split like that; you just create two points of failure
 
-Comparable. MWEB transactions carry standard Litecoin network fees, similar to non-MWEB transactions. Peg-in and peg-out each count as on-chain transactions with standard fees.
+## Testing your backup
 
-### How fast are MWEB transactions?
+Before relying on your backup, test it:
 
-Same as standard Litecoin — confirmations follow the 2.5-minute block time. Your MWEB balance updates as soon as the transaction confirms.
+1. Install LiteWallet on a second device (or a test device)
+2. Choose **Restore Wallet**
+3. Enter your 12 words in order
+4. Confirm the wallet shows your same addresses
 
-### Can I send MWEB directly to an exchange?
+If it works, your backup is verified. Erase the test installation afterward.
 
-Most exchanges accept only standard Litecoin addresses. To deposit to an exchange, peg out from MWEB to a standard Litecoin address first, then send to the exchange.
+## If you lose your device
 
-## Technical
+1. Install LiteWallet on a new device
+2. Choose **Restore Wallet** on setup
+3. Enter your 12-word recovery phrase
+4. Your balance and transaction history appear automatically
 
-### What's LiteWallet's relationship to Litecoin Core?
+This works because the phrase is a cryptographic seed — the same phrase always generates the same keys, and the same keys control the same LTC on the Litecoin blockchain.
 
-LiteWallet is an SPV (Simplified Payment Verification) wallet. It doesn't run a full Litecoin node — instead it connects to trusted nodes to verify transactions cryptographically without storing the entire blockchain. This keeps the wallet lightweight and fast.
+## If you lose your recovery phrase
 
-### Does LiteWallet support Tor?
-
-Yes. You can route LiteWallet's network connections through Tor for additional network-level privacy. See **Settings → Advanced → Tor**.
-
-### What's the latest version?
-
-See the [Changelog](./changelog.md) or [litewallet.dev/changelog](https://litewallet.dev/changelog).
-
-## Support
-
-### How do I get help?
-
-- **Support guides:** [litewallet.dev/support/troubleshoot](https://litewallet.dev/support/troubleshoot)
-- **FAQ:** [litewallet.dev/faq](https://litewallet.dev/faq)
-- **Community:** [Discord](https://discord.gg/litecoin) or [X/Twitter](https://x.com/LiteWallet)
-
-### Who can I contact about a security issue?
-
-See [security disclosure process](./security.md).
-
-### Will LiteWallet ask for my recovery phrase?
-
-**Never.** LiteWallet support will never ask for your recovery phrase, private keys, or password. Anyone asking for these is attempting to steal from you. Report suspected phishing to the official channels above.
+If you no longer have the recovery phrase AND you still have access to the original device, **immediately transfer your LTC to a new wallet with a fresh, properly backed-up recovery phrase.** If the device fails before you can do this, the funds are permanently unrecoverable.
 
 ---
 
 ## Read more
 
-- **Full FAQ:** [litewallet.dev/faq](https://litewallet.dev/faq)
-- **Guides:** [litewallet.dev/guides](https://litewallet.dev/guides)
-- **Download:** [litewallet.dev/download](https://litewallet.dev/download)
+- **Full guide with screenshots:** [litewallet.dev/guides/how-to-backup](https://litewallet.dev/guides/how-to-backup)
+- **Security model:** [litewallet.dev/security](https://litewallet.dev/security)
+- **Recovering a wallet:** [litewallet.dev/recover](https://litewallet.dev/recover)
+- **FAQ:** [litewallet.dev/faq](https://litewallet.dev/faq)

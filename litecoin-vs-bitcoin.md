@@ -1,94 +1,86 @@
-# How to back up your LiteWallet
+# Litecoin vs Bitcoin
 
-> 📖 Full step-by-step guide with screenshots at [litewallet.dev/guides/how-to-backup](https://litewallet.dev/guides/how-to-backup)
+> 📖 Full comparison with detailed analysis at [litewallet.dev/guides/litecoin-vs-bitcoin](https://litewallet.dev/guides/litecoin-vs-bitcoin)
 
 ---
 
-**This is the single most important step in self-custody.** If you lose access to your device without a backup, the LTC in your wallet is permanently unrecoverable. LiteWallet is non-custodial — no one, including us, can restore your funds.
+Litecoin and Bitcoin share the same foundations — proof of work, UTXO model, fixed supply cap, public ledger. The differences come down to specific design choices made when Litecoin forked from Bitcoin in 2011.
 
-## What you're backing up
+## Quick comparison
 
-When you create a LiteWallet wallet, the app generates a **12-word recovery phrase** (also called a seed phrase or mnemonic). This phrase is:
+| Property | Litecoin | Bitcoin |
+|---|---|---|
+| **Launch** | October 2011 | January 2009 |
+| **Block time** | 2.5 minutes | 10 minutes |
+| **Max supply** | 84,000,000 LTC | 21,000,000 BTC |
+| **Hash algorithm** | Scrypt | SHA-256 |
+| **Halving schedule** | Every 840,000 blocks | Every 210,000 blocks |
+| **SegWit** | Activated 2017 | Activated 2017 |
+| **Taproot** | Not activated | Activated 2021 |
+| **MWEB privacy** | Activated 2022 | Not available |
+| **Typical network fee** | Under $0.01 | Variable, often $1–$20 |
+| **Lightning Network** | Yes | Yes |
 
-- The master key to your wallet
-- Human-readable (English words from the BIP-39 standard)
-- The only thing needed to restore your wallet on any compatible device
-- **Never uploaded anywhere** — LiteWallet stores it only on your device
+## Speed
 
-## The backup process
+Litecoin confirms transactions 4× faster than Bitcoin because blocks are produced every 2.5 minutes instead of every 10 minutes. In practice, this means:
 
-### Step 1: Open the recovery phrase view
+- Litecoin transactions typically get one confirmation in 2–3 minutes
+- Exchanges often require fewer confirmations for Litecoin deposits (e.g., 6 confirmations = ~15 minutes on Litecoin vs ~60 minutes on Bitcoin)
+- Merchants accepting Litecoin experience faster payment certainty
 
-On first setup, LiteWallet shows your 12-word phrase automatically. If you skipped it, you can view it later:
+## Fees
 
-- **Settings** → **Security** → **View Recovery Phrase**
-- Enter your device PIN to confirm
+Litecoin's transaction fees remain consistently low — typically under $0.01 per transaction regardless of network conditions. Bitcoin fees fluctuate significantly:
 
-### Step 2: Write it down on paper
+- Bitcoin fees can spike during high demand (historically reaching $50+ during peak activity)
+- Litecoin's faster blocks and lower overall adoption mean less fee competition
+- For small, frequent payments, Litecoin is substantially cheaper
 
-Use pen and paper. Not a computer. Not a screenshot. Not a photo. Not a cloud note.
+## Privacy
 
-- Each word in order, numbered 1 to 12
-- Write clearly
-- Use a pen that won't fade (not pencil, not erasable ink)
-- Include a small label so you remember which wallet it belongs to
+**This is the biggest technical difference as of 2026.**
 
-### Step 3: Verify what you wrote
+Litecoin activated MWEB (MimbleWimble Extension Block) in May 2022, adding optional confidential transactions where amounts and addresses are hidden on-chain. Bitcoin has no equivalent feature.
 
-Read your written copy back while comparing to the app. Confirm every word matches exactly. One wrong letter can make the backup useless.
+For users who want privacy as an option on a mainstream proof-of-work chain, Litecoin is currently the only option in that category.
 
-### Step 4: Store it safely
+[Learn more about MWEB →](./what-is-mweb.md)
 
-Choose a location that is:
+## Mining
 
-- **Physically secure** — fireproof safe, safety deposit box, or equivalent
-- **Private** — where no guests, cleaners, or family can accidentally find it
-- **Known only to you** — and optionally one trusted person (spouse, lawyer) who can access it if something happens to you
-- **Not with your device** — defeats the purpose if both are destroyed together
+- **Bitcoin** — SHA-256 algorithm. Dominated by specialized ASIC hardware, large industrial mining operations.
+- **Litecoin** — Scrypt algorithm. Was designed to be memory-hard to resist ASICs; eventually Scrypt ASICs appeared, but the mining ecosystem remains more distributed.
 
-### Step 5: Consider a second copy
+**Merge mining:** Litecoin can be merge-mined with Dogecoin (same Scrypt algorithm), meaning miners can earn LTC and DOGE simultaneously. This shared security model strengthens both chains.
 
-Many users keep two copies in two separate secure locations. A house fire or flood can destroy both your device AND your single paper backup. Redundancy helps.
+## Use cases
 
-Metal backup products (engraved steel plates) offer protection against fire and water damage that paper doesn't. Consider one for significant holdings.
+**Bitcoin excels at:**
+- Store of value (more widespread institutional adoption)
+- Largest global network effect
+- Maximum regulatory clarity in most jurisdictions
 
-## What NOT to do
+**Litecoin excels at:**
+- Fast, cheap payments
+- Optional privacy via MWEB
+- Merchant acceptance for day-to-day transactions
+- Lower barrier to entry for new users (lower per-unit price, lower fees)
 
-- **Don't type it into any website, email, or messaging app** — not even to yourself
-- **Don't take a photo** — phones get stolen, cloud backups get hacked
-- **Don't store it digitally in a "notes" app** — even encrypted ones
-- **Don't share it with anyone claiming to be "support"** — LiteWallet support will NEVER ask for your recovery phrase
-- **Don't split it into halves stored in different places** — the phrase has no meaningful protection when split like that; you just create two points of failure
+## Which should you use?
 
-## Testing your backup
+For most people, the answer is "both, for different purposes":
 
-Before relying on your backup, test it:
-
-1. Install LiteWallet on a second device (or a test device)
-2. Choose **Restore Wallet**
-3. Enter your 12 words in order
-4. Confirm the wallet shows your same addresses
-
-If it works, your backup is verified. Erase the test installation afterward.
-
-## If you lose your device
-
-1. Install LiteWallet on a new device
-2. Choose **Restore Wallet** on setup
-3. Enter your 12-word recovery phrase
-4. Your balance and transaction history appear automatically
-
-This works because the phrase is a cryptographic seed — the same phrase always generates the same keys, and the same keys control the same LTC on the Litecoin blockchain.
-
-## If you lose your recovery phrase
-
-If you no longer have the recovery phrase AND you still have access to the original device, **immediately transfer your LTC to a new wallet with a fresh, properly backed-up recovery phrase.** If the device fails before you can do this, the funds are permanently unrecoverable.
+- **Long-term savings** — Bitcoin
+- **Daily payments and remittances** — Litecoin
+- **Privacy-conscious transactions** — Litecoin (MWEB)
+- **Testing self-custody** — Litecoin (low fees let you practice without losing much to transaction costs)
 
 ---
 
 ## Read more
 
-- **Full guide with screenshots:** [litewallet.dev/guides/how-to-backup](https://litewallet.dev/guides/how-to-backup)
-- **Security model:** [litewallet.dev/security](https://litewallet.dev/security)
-- **Recovering a wallet:** [litewallet.dev/recover](https://litewallet.dev/recover)
-- **FAQ:** [litewallet.dev/faq](https://litewallet.dev/faq)
+- **Full comparison:** [litewallet.dev/guides/litecoin-vs-bitcoin](https://litewallet.dev/guides/litecoin-vs-bitcoin)
+- **What is Litecoin?** [Read →](./what-is-litecoin.md)
+- **What is MWEB?** [Read →](./what-is-mweb.md)
+- **Current price:** [litewallet.dev/price](https://litewallet.dev/price)
